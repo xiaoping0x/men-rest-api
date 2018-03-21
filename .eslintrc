@@ -1,10 +1,23 @@
 {
   "parser": "babel-eslint",
   "extends": [
-    "standard"
+    "airbnb-base"
   ],
   "env": {
     "jest": true,
     "jasmine": true
+  },
+  "rules": {
+    "comma-dangle": ["error", {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "never",
+        "exports": "never",
+        "functions": "never"
+    }],
+    "function-paren-newline": 0,
+    "class-methods-use-this": 0,
+    "no-underscore-dangle": 0,
+    "import/prefer-default-export": 0
   }
 }

@@ -177,3 +177,28 @@ This is the entry file of the API. It defines the routes using, along other midd
 ### services/
 
 Here you can put `helpers`, `libraries` and other types of modules which you want to use in your APIs.
+
+## developing
+
+run locally run using docker-compose:
+
+```bash
+sudo docker-compose up
+```
+
+the app runs on `localhost:8080`
+
+## production
+
+build the Docker :whale: container and run it:
+
+_you'll likely be consuming mongodb as a service, so make sure you set the env var to connect to it._
+
+```bash
+sudo docker build -t <image-name> .
+sudo docker run \
+  -p <host-port>:8080 \
+  -d <image-name> \
+  -e MONGO_DB_URI=mongodb://<username>:<password>@<host>:<port> \
+  npm run start
+```
